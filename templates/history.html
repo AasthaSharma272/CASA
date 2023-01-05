@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}: History {% endblock %}
+
+{% block main %}
+  <h2>{{ date }}</h2>
+  <!-- Insert previous image -->
+  {% if format == "song" %}
+      <iframe width="420" height="315" src="{{ file }}"></iframe>
+  {% elif format == "art" %}
+      <img src="{{ file }}" alt="photo result">
+  {% elif format == "poem" %}
+      <p>{{ file }}</p>
+  {% else %}
+      <p>I'm sorry, we had an error somewhere.</p>
+  {% endif %}
+
+  <!-- user result -->
+  <h3>Your input:</h3>
+  <p>{{ feel }}</p>
+
+  <h3>Our AI's understanding:</h3>
+  <p>{{ para }}</p>
+
+{% endblock %}

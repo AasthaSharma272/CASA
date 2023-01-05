@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}: Home {% endblock %}
+
+{% block main %}
+<div class="section">
+  <h1>Welcome home</h1>
+  <form action="/" method="post">
+    <div class="form-group row">
+      <p>Which emotion would you like to connect to right now?</p>
+       <input name="feel" placeholder="Type here..." autofocus autocomplete="off" type="text">
+        
+    </div>
+
+    <div class="form-group">
+      <label for="format">Choose your preferred medium: </label>
+      <select name="format" id="format">
+        <option value="art">Visual Art</option>
+        <option value="poem">Poetry</option>
+        <option value="song">Music</option>
+      </select>
+    
+    </div>
+    
+    <div class="form-group">
+      <label for="lang"> If you chose poetry or music, which language would you like it to be in? </label>
+      <select name="lang" id="lang">
+        <option value="english">English</option>
+        <option value="hindi">Hindi</option>
+      </select>
+    </div>
+
+    <button class="btn btn-primary" type="submit">Submit</button>
+  </form>
+</div>
+{% endblock %}

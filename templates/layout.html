@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <link href="static/bootstrap.css" rel="stylesheet">
+    <link href="/static/styles.css" rel="stylesheet">
+
+    <title>CASA{% block title %} {% endblock %}</title>
+    
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/">CASA: Make Yourself at Home</a>
+          <button aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbar" data-toggle="collapse" type="button">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbar">
+            {% if session.user_id %}
+              <ul class="navbar-nav ml-auto mt-2">
+                <li class="nav-item"><a class="nav-link" href="/logout">Log Out</a></li>
+              </ul>
+            {% else %}
+              <ul class="navbar-nav ml-auto mt-2">
+                  <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
+                  <li class="nav-item"><a class="nav-link" href="/login">Log In</a></li>
+              </ul>
+            {% endif %}
+          </div>
+        </div>
+    </nav>
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <header>
+          <div class="alert alert-warning border text-center" role="alert">
+            {{ get_flashed_messages() | join(" ") }}
+          </div>
+        </header>
+      {% endif %}
+    {% endwith %}
+    
+    <main class="container p-5">
+      {% block main %} {% endblock %}
+    </main>
+  </body>
+  
+</html>

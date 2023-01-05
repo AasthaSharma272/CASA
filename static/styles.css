@@ -1,0 +1,34 @@
+body {
+  background-color: #90dfc9;
+  color: #fff;
+}
+
+main
+{
+  text-align: center;
+}
+
+p, label, button {
+  font-size: 22px;
+}
+
+.section {
+    padding: 0.5rem 2rem 1rem 2rem;
+    width: auto;
+    font-family: "Kanit", sans-serif;
+}
+
+.navbar {
+  padding: 1.25rem;
+  margin: auto;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+    
+}
+
+.container {
+  margin-top: 2rem;
+}
+
